@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-content: #1C1C1C;
+  --bg-contact: #FFFFFF;
+
+
+  --text-primary: #FFFFFF;
+  --text-gray: #949494;
+
+  --border-color: rgb(204, 200, 200);
+
+  --bg-button: #6E6E6E;
+
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+.content {
+  width: 100%;
+  background-color: var(--bg-content);
+  padding: 50px;
+  color: var(--text-primary);
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-form {
+  width: 100%;
+  padding: 4rem;
+  background-color: var(--bg-contact);
+  z-index: 9999;
+}
+
+
+/* Content */
+.main-top-heading {
+  margin-bottom: 2.5rem;
+}
+
+.main-big-heading {
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+
+.text-img-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.text-img-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.content-trusted {
+  margin-top: 4rem;
+  color: var(--text-gray);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.brand-img-container {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.brand-img-container img {
+  width: 70px;
+}
+
+.rating {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ocean {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8vh;
+  overflow: hidden;
+  background-color: var(--bg-content);
+}
+
+.wave {
+  background: url(./asset/wave.svg) repeat-x;
+  position: absolute;
+  top: 0;
+  width: 200%;
+  height: 100%;
+  background-size: contain;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  filter: grayscale(100%) brightness(1.9) contrast(1.3);
+}
+
+.wave:nth-of-type(2) {
+  top: -10%;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes swell {
+
+  0%,
+  100% {
+    transform: translate(-5px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+
+.contact-form-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 70vh;
+}
+
+.contact-heading {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.contact-text {
+  color: var(--text-gray);
+}
+
+.form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  border: 1px solid rgb(204, 200, 200);
+  outline: none;
+  border-radius: 8px;
+}
+
+.next-container {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.next-btn {
+  background-color: var(--bg-button);
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+
+}
+
+.main-next {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.next-line {
+  width: 60px;
+  height: 4px;
+  border-radius: 6px;
+  background-color: #000000;
+}
+
+.next-gray {
+  background-color: var(--bg-button);
+}
+
+.fa-star {
+  color: var(--text-primary);
+}
+
+
+
+/* media queries */
+
+@media(min-width:1300px){
+  .contact-form {
+      width: 100%;
+     padding: 4rem 6rem;    
+      background-color: var(--bg-contact);
+      z-index: 9999;
+    }
+        .brand-img-container img {
+          width: 100px;
+        }
+}
+@media(max-width:1000px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .brand-img-container img {
+    width: 80px;
+  }
+
+  .ocean {
+    display: none;
+  }
+
+  .rating {
+    display: none;
+  }
+}
+
+@media(max-width:800px){
+  .next-line {
+      display: none;
+    }
+}
